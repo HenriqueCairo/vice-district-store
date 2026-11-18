@@ -1,0 +1,89 @@
+
+<!-- BANNER PRINCIPAL -->
+<section class="hero">
+  <app-particles-bg></app-particles-bg>
+
+  <div class="wrap hero-inner">
+    <img
+      src="assets/logo.jpg"
+      alt="Vice District"
+      class="hero-logo"
+    />
+
+    <h1 class="hero-title">
+      Vista o jogo.<br />
+      Viva o Distrito.
+    </h1>
+
+    <p class="hero-sub">
+      Streetwear e itens gamer com a atitude de Vice District —
+      da camiseta ao chaveiro, direto pra sua casa.
+      Peça pelo WhatsApp, sem complicação.
+    </p>
+
+    <div class="hero-ctas">
+      <a href="#catalogo" class="btn btn-primary">
+        Ver produtos
+      </a>
+
+      <a
+        [href]="whatsapp.getGenericLink()"
+        target="_blank"
+        rel="noopener"
+        class="btn btn-whatsapp"
+      >
+        Chamar no WhatsApp
+      </a>
+    </div>
+  </div>
+
+  <div class="scroll-cue" aria-hidden="true"></div>
+</section>
+
+
+<!-- TRAILER 2 OFICIAL GTA VI -->
+<app-trailer-player></app-trailer-player>
+
+
+<!-- CATÁLOGO DE PRODUTOS -->
+<app-product-grid></app-product-grid>
+
+
+<!-- COMO COMPRAR -->
+<section id="como-comprar" class="steps-section">
+  <div class="wrap">
+
+    <h2 class="reveal">Como comprar</h2>
+
+    <div class="steps">
+
+      <div class="step reveal">
+        <span class="step-n">1</span>
+        <h3>Escolha sua peça</h3>
+        <p>
+          Navegue pelo catálogo e entre no produto que curtiu.
+        </p>
+      </div>
+
+      <div class="step reveal">
+        <span class="step-n">2</span>
+        <h3>Chama no WhatsApp</h3>
+        <p>
+          O botão de compra já abre o WhatsApp
+          com tudo preenchido.
+        </p>
+      </div>
+
+      <div class="step reveal">
+        <span class="step-n">3</span>
+        <h3>Combina e recebe</h3>
+        <p>
+          Acerta pagamento e entrega direto com a gente,
+          sem burocracia.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+

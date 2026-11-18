@@ -1,0 +1,64 @@
+
+<section class="trailer-section" id="trailer">
+
+  <div class="trailer-header">
+    <span class="trailer-label">ROCKSTAR GAMES</span>
+
+    <h2>GTA VI — TRAILER 2 OFICIAL</h2>
+
+    <p>
+      Entre no clima de Vice City.
+      Assista ao segundo trailer oficial de Grand Theft Auto VI.
+    </p>
+  </div>
+
+  <div class="trailer-card">
+
+    <!-- Capa do vídeo -->
+    <button
+      *ngIf="!playing"
+      type="button"
+      class="trailer-frame facade"
+      aria-label="Reproduzir Trailer 2 oficial de GTA VI"
+      (click)="play()"
+    >
+
+      <img
+        [src]="thumbnailUrl"
+        alt="Capa do Trailer 2 de GTA VI"
+        class="thumb"
+      />
+
+      <span class="play-btn" aria-hidden="true">
+        <svg
+          viewBox="0 0 24 24"
+          width="32"
+          height="32"
+          fill="currentColor"
+        >
+          <path d="M8 5v14l11-7z" />
+        </svg>
+      </span>
+
+      <span class="video-tag">
+        TRAILER 2 OFICIAL
+      </span>
+
+    </button>
+
+    <!-- Player do YouTube -->
+    <iframe
+      *ngIf="playing"
+      class="trailer-frame video-player"
+      [src]="safeUrl"
+      title="GTA VI - Trailer 2 Oficial"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen
+    ></iframe>
+
+  </div>
+
+</section>
+

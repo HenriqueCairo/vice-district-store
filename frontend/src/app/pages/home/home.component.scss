@@ -1,0 +1,130 @@
+.hero {
+  position: relative;
+  min-height: 86vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 20% 20%, rgba(124, 42, 232, 0.25), transparent 55%),
+    radial-gradient(ellipse at 80% 75%, rgba(232, 41, 156, 0.2), transparent 55%),
+    var(--bg);
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  padding-top: 60px;
+  padding-bottom: 80px;
+  max-width: 720px;
+}
+
+.hero-logo {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  margin-bottom: 28px;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-weight: 400; // a fonte spray-paint já carrega o peso visual
+  font-size: clamp(42px, 7vw, 76px);
+  line-height: 1.05;
+  letter-spacing: 0.5px;
+  background: var(--grad);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 22px;
+}
+
+.hero-sub {
+  color: var(--text-muted);
+  font-size: 17px;
+  max-width: 480px;
+  margin-bottom: 34px;
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+
+  .btn { padding: 15px 28px; }
+}
+
+.scroll-cue {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 22px;
+  height: 36px;
+  border: 2px solid var(--border-strong);
+  border-radius: 20px;
+  z-index: 2;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 8px;
+    background: var(--magenta);
+    border-radius: 2px;
+    animation: scrollDown 1.6s ease-in-out infinite;
+  }
+}
+
+@keyframes scrollDown {
+  0% { opacity: 1; top: 6px; }
+  100% { opacity: 0; top: 18px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-cue::after { animation: none; }
+}
+
+.steps-section {
+  padding: 70px 0 100px;
+  border-top: 1px solid var(--border);
+
+  h2 { font-size: 26px; margin-bottom: 34px; }
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+
+  @media (max-width: 760px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.step {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 26px;
+
+  .step-n {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    background: var(--grad);
+    color: #fff;
+    font-weight: 800;
+    margin-bottom: 14px;
+  }
+
+  h3 { font-size: 17px; margin-bottom: 8px; }
+  p { color: var(--text-muted); font-size: 14px; }
+}
+
+@media (max-width: 640px) {
+  .hero { min-height: 92vh; }
+}

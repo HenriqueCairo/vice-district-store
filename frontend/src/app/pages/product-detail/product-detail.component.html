@@ -1,0 +1,75 @@
+<div class="wrap page">
+  <a routerLink="/" class="back">← Voltar ao catálogo</a>
+
+  <div class="skeleton-detail" *ngIf="loading">
+    <div class="skeleton img-skel skeleton"></div>
+    <div class="info-skel">
+      <div class="skeleton line w60"></div>
+      <div class="skeleton line w40"></div>
+      <div class="skeleton line w80"></div>
+    </div>
+  </div>
+
+  <p class="not-found" *ngIf="notFound">
+    Não achei esse produto. Ele pode ter sido removido — volte ao
+    <a routerLink="/">catálogo</a>.
+  </p>
+
+  <div class="detail" *ngIf="product && !loading">
+    <div class="gallery">
+      <div class="main-image">
+        <img [src]="product.images[activeImage]" [alt]="product.name" />
+        <span class="badge-discount" *ngIf="discountPercent">-{{ discountPercent }}%</span>
+      </div>
+      <div class="thumbs" *ngIf="product.images.length > 1">
+        <button
+          *ngFor="let img of product.images; let i = index"
+          class="thumb"
+          [class.active]="i === activeImage"
+          (click)="setActiveImage(i)"
+        >
+          <img [src]="img" [alt]="product.name + ' - imagem ' + (i + 1)" />
+        </button>
+      </div>
+    </div>
+
+    <div class="info">
+      <span class="category">{{ product.category }}</span>
+      <h1 class="name">{{ product.name }}</h1>
+
+      <div class="price-row">
+        <span class="price">R$ {{ product.price.toFixed(2).replace('.', ',') }}</span>
+        <span class="old-price" *ngIf="product.oldPrice">R$ {{ product.oldPrice.toFixed(2).replace('.', ',') }}</span>
+      </div>
+
+      <p class="low-stock" *ngIf="product.stock && product.stock <= 3">
+        Só {{ product.stock }} unidades em estoque
+      </p>
+
+      <p class="description">{{ product.description }}</p>
+
+      <div class="qty-row">
+        <span>Quantidade</span>
+        <div class="stepper">
+          <button (click)="decrement()" aria-label="Diminuir quantidade">–</button>
+          <span>{{ qty }}</span>
+          <button (click)="increment()" aria-label="Aumentar quantidade">+</button>
+        </div>
+      </div>
+
+      <a [href]="whatsappLink" target="_blank" rel="noopener" class="btn btn-whatsapp buy-btn">
+        Comprar pelo WhatsApp
+      </a>
+
+      <a
+        *ngIf="product.externalLink"
+        [href]="product.externalLink"
+        target="_blank"
+        rel="noopener"
+        class="btn btn-ghost external-btn"
+      >
+        Ver mais sobre esse item
+      </a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<footer class="footer">
+  <div class="wrap grid">
+    <div class="col-brand">
+      <img src="assets/logo.jpg" alt="Vice District" class="logo" />
+      <p class="tagline">Streetwear e itens gamer com a atitude de quem vive o jogo.</p>
+    </div>
+
+    <div class="col">
+      <h4>Loja</h4>
+      <a routerLink="/" fragment="catalogo">Catálogo</a>
+      <a routerLink="/" fragment="como-comprar">Como comprar</a>
+    </div>
+
+    <div class="col">
+      <h4>Fale com a gente</h4>
+      <a [href]="whatsapp.getGenericLink()" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="#" target="_blank" rel="noopener">Instagram</a>
+      <a href="#" target="_blank" rel="noopener">TikTok</a>
+    </div>
+  </div>
+
+  <div class="wrap legal">
+    <p>© {{ year }} Vice District. Loja independente de fã, sem vínculo oficial com desenvolvedoras de jogos.</p>
+  </div>
+</footer>

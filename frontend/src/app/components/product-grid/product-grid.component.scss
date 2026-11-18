@@ -1,0 +1,60 @@
+.section {
+  padding: 72px 0;
+}
+
+.section-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 20px;
+
+  h2 { font-size: 28px; }
+
+  .count {
+    color: var(--text-muted);
+    font-size: 14px;
+  }
+}
+
+.chips {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 20px;
+  margin-bottom: 8px;
+
+  &::-webkit-scrollbar { display: none; }
+}
+
+.chip {
+  flex: none;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  padding: 9px 18px;
+  font-size: 13.5px;
+  font-weight: 600;
+  border-radius: 999px;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+
+  &.active {
+    background: var(--grad);
+    color: #fff;
+    border-color: transparent;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 22px;
+}
+
+.skeleton-card {
+  aspect-ratio: 3 / 4;
+}
+
+.error {
+  color: var(--accent);
+  padding: 40px 0;
+}
